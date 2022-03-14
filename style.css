@@ -1,0 +1,475 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .container {
+    width: 100%;
+    padding: 90px 20px 20px 20px;
+  }
+  
+  p {
+    text-indent: 1em;
+  }
+  
+  /* NAV */
+  
+  .nav {
+    display: flex;
+    position: fixed;
+    z-index: 999;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5fb87a;
+    color: white;
+    padding: 0.5rem;
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+    width: 100vw;
+  }
+  
+  .nav-title {
+    font-size: 1.8rem;
+    padding: 1rem;
+  }
+  
+  /* NAV HAMBURGER */
+  
+  .nav-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    margin: 5px;
+  }
+  
+  .nav-button-hamburger {
+    width: 35px;
+    height: 4px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .nav-button-hamburger::before,
+  .nav-button-hamburger::after {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 4px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .nav-button-hamburger::before {
+    transform: translateY(-12px);
+  }
+  
+  .nav-button-hamburger::after {
+    transform: translateY(12px);
+  }
+  
+  /* NAV HAMBURGER ANIMATION */
+  
+  .nav-button.open .nav-button-hamburger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+  }
+  
+  .nav-button.open .nav-button-hamburger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+  
+  .nav-button.open .nav-button-hamburger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+  
+  /* NAV MENU */
+  
+  .nav-menu {
+    max-height: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+  
+  .nav-menu-li {
+    list-style: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+  }
+  
+  .nav-menu-li a {
+    text-decoration: none;
+    padding: 1rem;
+    color: white;
+    display: block;
+    position: relative;
+  }
+  
+  .nav-menu.open {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+  }
+  
+  .nav-menu.open .nav-menu-li {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+  }
+  
+  /* HEADERS */
+  
+  .about-me-header h1,
+  .skills-header h1,
+  .projects-header h1,
+  .contact-header h1 {
+    border-bottom: 1px solid grey;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+  }
+  
+  /* ABOUT ME */
+  
+  .about-me {
+    display: grid;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .about-me-intro {
+    display: grid;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .about-me-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin: 0 auto;
+  }
+  
+  .about-me-name {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .about-me-name h2,
+  .about-me-name h3 {
+    font-weight: 400;
+    color: grey;
+  }
+  
+  .about-me-header {
+    text-align: left;
+    padding: 5px 0;
+  }
+  
+  .about-me-text {
+    text-align: justify;
+    font-size: 1.1rem;
+  }
+  
+  /* SKILLS */
+  
+  .skills p {
+    text-indent: 0;
+  }
+  
+  .skills {
+    display: grid;
+    padding: 5px 0;
+    margin: 10px 0;
+  }
+  
+  .skills-main {
+    display: grid;
+    grid-template-areas: auto;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  .skills-main div {
+    padding: 20px;
+  }
+  
+  .skills-html {
+    grid-area: auto;
+  }
+  
+  .skills-css {
+    grid-area: auto;
+  }
+  
+  .skills-js {
+    grid-area: auto;
+  }
+  
+  .skills-bootstrap {
+    grid-area: auto;
+  }
+  
+  .skills-csharp {
+    grid-area: auto;
+  }
+  
+  .skills-core {
+    grid-area: auto;
+  }
+
+  .skils-sql {
+    grid-area: auto;
+  }
+
+  .skills-testr {
+    grid-area: auto;
+  }
+  
+  .skills-main div i {
+    font-size: 92px;
+    margin: 10px;
+  }
+  
+  .skills-img {
+    width: 90px;
+    height: 90px;
+    margin: 10px;
+  }
+
+  .skills-img-testr {
+    width: 170px;
+    height: 90px;
+    margin: 10px;
+  }
+
+  .skills-img-sql {
+    width: 140px;
+    height: 90px;
+    margin: 10px;
+  }
+  
+  .fa-html5 {
+    color: #e96228;
+  }
+  
+  .fa-css3-alt {
+    color: #28a4d8;
+  }
+  
+  .fa-js-square {
+    color: #efd81d;
+  }
+  
+  .fa-bootstrap {
+    color: #533b78;
+  }
+  
+  /* PROJECTS */
+  
+  .project {
+    display: flex;
+    margin: 10px 0;
+  }
+  
+  .project-desc {
+    width: 50%;
+    padding: 5px;
+  }
+  
+  .project-desc h2 {
+    margin: 10px 0;
+  }
+  
+  .project-desc h2 a {
+    color: black;
+  }
+  
+  .project-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: auto;
+    font-size: 92px;
+    padding: 5px;
+  }
+  
+  .fa-shopping-bag {
+    color: #ffb24a;
+  }
+  
+  .fa-cloud-sun {
+    color: #8a8a8a;
+  }
+  
+  .fa-book {
+    color: #0081a7;
+  }
+  
+  /* CONTACT */
+  
+  .contact p {
+    text-indent: 0;
+  }
+  
+  .contact {
+    padding: 30px 0;
+    margin: 10px 0;
+  }
+  
+  .contact-mail,
+  .contact-github {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 90px;
+    height: 90px;
+    margin: 10px;
+  }
+  
+  .contact-mail a,
+  .contact-github a {
+    color: black;
+  }
+  
+  /* FOOTER */
+  
+  .footer {
+    background-color: #5fb87a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  /* RESPONSIVE VIEW */
+  
+  @media only screen and (min-width: 768px) {
+    .nav {
+      justify-content: space-evenly;
+    }
+    .nav-button-hamburger {
+      display: none;
+    }
+    .nav-menu {
+      max-height: 500px;
+      flex-direction: row;
+      width: auto;
+    }
+    .nav-menu-li {
+      opacity: 1;
+      margin: 0 0.5rem 0 0.5rem;
+      cursor: pointer;
+    }
+    .nav-menu-li a::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out;
+    }
+    .about-me {
+      grid-template-areas: "i m";
+      align-items: center;
+    }
+    .about-me-intro {
+      grid-area: i;
+      padding: 30px;
+    }
+    .about-me-main {
+      grid-area: m;
+      padding: 30px;
+    }
+    .skills-main {
+      grid-template-areas:
+        "h c j b"
+        ". s a .";
+      justify-content: space-between;
+      padding: 10px;
+    }
+    .skills,
+    .project,
+    .contact {
+      margin: 30px 0;
+    }
+    .project-desc {
+      width: 70%;
+    }
+    .project-img {
+      width: 30%;
+    }
+    .nav-menu-li:hover a::before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  
+    .contact-main {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    .container {
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+  .shine-button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #5fb87a;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #5fb87a;
+    transition: .2s ease-in-out;
+  }
+  .shine-button:before {
+    content: "";
+    background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -8px;
+    left: -75px;
+    transform: skewX(-45deg);
+  }
+  .shine-button:hover {
+    background: #fe6637;
+    color: #fff;
+  }
+  .shine-button:hover:before {
+    left: 150px;
+    transition: .5s ease-in-out;
+  }
